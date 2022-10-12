@@ -13,7 +13,6 @@ document.body.appendChild(div1$$);
 // 2.3 Inserta dinamicamente en un html un div que contenga 6 p utilizando un loop con javascript.
 
 const div3$$ = document.createElement('div');
-document.body.appendChild(div3$$)
 
 for (let i = 0; i < 6; i++) {
     let sixPElements = document.createElement('p');   
@@ -57,14 +56,13 @@ for (const element of allClassToRemove){
 // 	Recuerda que no solo puedes insertar elementos con .appendChild.
 
 const p3$$ = document.createElement('p');
-const divs$$ = document.querySelector('div'); //Me duelve un array con dos posiciones
 p3$$.textContent = 'Voy en medio!';
+const divs$$ = document.querySelectorAll('div');
+console.log(divs$$)
+document.body.insertBefore(p3$$,divs$$[3]);
+// Con el insertBefore añado en la p antes que la posicion 1 de mi array, es decir, al medio.
 
 
-document.body.insertBefore(p3$$,divs$$[1]);// Con el insertBefore añado en la p antes que 
-                                          // la posicion 1 de mi array, es decir, al medio.
-
- 
 // 2.9 Inserta p con el texto 'Voy dentro!', dentro de todos los div con la clase .fn-insert-here
 
 const findAllDivsWithClass$$ = document.querySelectorAll('.fn-insert-here');
